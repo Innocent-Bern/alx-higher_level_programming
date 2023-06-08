@@ -24,7 +24,7 @@ listint_t *new_node(int number)
 */
 listint_t *get_greater_than_node(listint_t *node, int number)
 {
-	listint_t *add_node = new_node(number);
+	listint_t *add_node;
 
 	if (node->next == NULL && node->n < number)
 	{
