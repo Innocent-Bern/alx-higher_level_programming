@@ -28,6 +28,7 @@ listint_t *get_greater_than_node(listint_t *node, int number)
 
 	if (node->next == NULL && node->n < number)
 	{
+		add_node = new_node(number);
 		node->next = add_node;
 		return (add_node);
 	}
@@ -35,6 +36,7 @@ listint_t *get_greater_than_node(listint_t *node, int number)
 		get_greater_than_node(node->next, number);
 	else
 	{
+		add_node = new_node(number);
 		add_node->next = node->next;
 		node->next = add_node;
 	}
