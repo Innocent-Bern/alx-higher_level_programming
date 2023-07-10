@@ -1,0 +1,23 @@
+Test cases for 7-base_geometry.py
+=================================
+
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>> bg = BaseGeometry()
+>>> 
+>>> bg.integer_validator("my_int", 12)
+
+check value is an integer:
+>>> try:
+...     bg.integer_validator("my_int", "13")
+... except Exception as e:
+...     print(f"[{e.__class__.__name__}] {e}")
+...
+[TypeError] my_int must be an integer
+
+check value is greater than zero:
+>>> try:
+...     bg.integer_validator("my_int", 0)
+... except Exception as e:
+...     print(f"[{e.__class__.__name__}] {e}")
+...
+[ValueError] my_int must be greater than 0
