@@ -1,0 +1,26 @@
+======================
+0-add_integer.py tests
+======================
+
+>>> add_integer = __import__('0-add_integer').add_integer
+
+Works with numbers:
+>>> add_integer(2, 3)
+5
+
+works with integers only:
+>>> add_integer("s", 4)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+
+>>> add_integer(4, "s")
+Traceback (most recent call last):
+    ...
+TypeError: b must be an integer
+
+Checks for missing args
+>>> add_integer()
+Traceback (most recent call last):
+    ...
+TypeError: add_integer() missing 1 required positional argument: 'a'
