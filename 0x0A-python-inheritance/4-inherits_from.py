@@ -5,4 +5,7 @@
 def inherits_from(obj, a_class):
     """checks if obj is instance of a_class"""
 
-    return isinstance(obj, a_class.__bases__)
+    for i in type(obj).__bases__: 
+        if i is a_class or type(obj) == a_class:
+            return True
+    return False
