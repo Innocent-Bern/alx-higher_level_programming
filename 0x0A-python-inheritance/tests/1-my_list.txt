@@ -1,0 +1,18 @@
+Tests cases for 1-my_list.py
+============================
+
+>>> MyList = __import__('1-my_list').MyList
+
+check MyList is a subclass of list
+>>> issubclass(MyList, list)
+True
+
+check my_list.print_sorted() does sort in ascending order
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.append(-4)
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> my_list.append(5)
+>>> my_list.print_sorted()
+[-4, 1, 2, 3, 5]
