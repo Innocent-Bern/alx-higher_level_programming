@@ -1,0 +1,41 @@
+=============================
+Tests for 2-matrix.divided.py
+=============================
+
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+check matrix is type list
+>>> matrix_divided(4543, 5)
+Traceback (most recent call last):
+    ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+check matrix contains only lists
+>>> matrix_divided([[1, 3, 4], 1, [3, 5]], 5)
+Traceback (most recent call last):
+    ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+check matrix list only are of same len
+>>> matrix_divided([[1, 3, 4], [3, 5]], 5)
+Traceback (most recent call last):
+    ...
+TypeError: Each row of the matrix must have the same size
+
+check matrix list only contain numbers
+>>> matrix_divided([[1, 3, 4], [3, 4,"test"]], 5)
+Traceback (most recent call last):
+    ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+check div is a number(float or int)
+>>> matrix_divided([[1, 3, 4], [4, 5, 6]], "a")
+Traceback (most recent call last):
+    ...
+TypeError: div must be a number
+
+check div is not zero
+>>> matrix_divided([[1, 3, 4], [4, 5, 6]], 0)
+Traceback (most recent call last):
+    ...
+ZeroDivisionError: division by zero
