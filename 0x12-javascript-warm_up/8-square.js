@@ -5,7 +5,7 @@ if (isNaN(process.argv[2])) {
 } else {
   let x = 0;
 
-  while (x < parseInt(process.argv[2])) {
+  while (x < parseInt(process.argv[2]) && parseInt(process.argv[2]) > 0) {
     let y = 0;
     const arr = [];
     while (y < parseInt(process.argv[2])) {
