@@ -15,13 +15,13 @@ class Square extends Rectangle {
 
       while (x < this.height) {
         let y = 0;
-        const arr = [];
+        let arr = '';
 
         while (y < this.height) {
-          arr.push('C');
+          arr += 'C';
           y += 1;
         }
-        console.log(...arr);
+        console.log(arr);
         x += 1;
       }
     }
