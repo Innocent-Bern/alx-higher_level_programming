@@ -17,10 +17,10 @@ if __name__ == "__main__":
             db=argv[3],
             port=3306
     )
-    cur = db.cursor("""SELECT * FROM states WHERE name
+    cur = db.cursor()
+    cur.execute("""SELECT * FROM states WHERE name
                     LIKE BINARY 'N%' ORDER BY states.id ASC""")
     for row in cur.fetchall():
         print(row)
-    cur.execute()
     cur.close()
     db.close()
