@@ -1,7 +1,8 @@
 #!/usr/bin/node
 
-async function statusCode () {
-  const response = await fetch(`${process.argv[2]}`);
-  console.log(`code: ${response.status}`);
-}
-statusCode();
+const request = require('request');
+
+request(`${process.argv[2]}`, (error, response, body) => {
+	if (error) console.error(error);
+	console.log(response.statusCode);
+})
